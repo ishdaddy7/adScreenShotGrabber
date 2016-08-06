@@ -1,1 +1,7 @@
+.idea
+node_modules
+npm-debug.log
+public
+.DS_Store
+coverage
 phantomjs-2.1.1-macosx
