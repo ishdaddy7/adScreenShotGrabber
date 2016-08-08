@@ -1,0 +1,31 @@
+<div>
+  <form name='jobForm' class='jobForm' ng-submit='submitJobForm()'>
+    <div class='form group'>
+      <label for='name'>Job Name</label>
+      <input type='text' class='form-control' id='name' ng-model='job.name'>
+    </div>
+    <div class='row' ng-repeat='jobDetail in jobDetails'>
+      <div class='col-lg-6'>
+        <label for='toSearch'>Url To Search</label>
+          <input type='url' class='form-control' id='toSearch'>
+      </div>
+      <div class='col-lg-6'>
+          <label for='toFind'>Vendor Domain To Find</label>
+          <input type='text' class='form-control' id='toFind'>
+      </div>
+      <div class='row'>
+        <div class='col-lg-offset-10'>
+          <a href='' ng-click='removeJobDetail()'>Remove Detail</a>
+        </div>
+      </div>
+    </div>
+    <a href='' ng-click='addJobDetail()'>+ Add Detail</a>
+    </div>
+  <div class='row'>
+    <div class='col-lg-offset-10'>
+      <a ui-sref='job'>Cancel</a>
+      <button ng-click='addNewJob()' class='btn btn-default'>Submit</button>
+    </div>
+  </div>
+  </form>
+</div>

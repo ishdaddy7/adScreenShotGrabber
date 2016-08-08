@@ -22,6 +22,7 @@ var chalk = require('chalk');
 var db = require('./server/db');
 var Job = db.model('job');
 var JobDetail = db.model('jobDetail');
+var User = db.model('user');
 var Promise = require('sequelize').Promise;
 
 const jobDetailSeeds = [
@@ -46,7 +47,7 @@ let seedJobs = function(){
 
     return Promise.all(creatingJobs);
 }
-/*var seedUsers = function () {
+var seedUsers = function () {
 
     var users = [
         {
@@ -65,9 +66,12 @@ let seedJobs = function(){
 
     return Promise.all(creatingUsers);
 
-};*/
+};
 
 db.sync({ force: true })
+    .then(function(){
+        return seedUsers();
+    })
     .then(function () {
         return seedJobs();
     })

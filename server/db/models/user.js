@@ -53,3 +53,4 @@ module.exports = db.define('user', {
         }
     }
 });
+

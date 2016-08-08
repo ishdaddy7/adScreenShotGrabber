@@ -16,5 +16,6 @@ module.exports = {
     "clientSecret": "INSERT_GOOGLE_CLIENT_SECRET_HERE",
     "callbackURL": "INSERT_GOOGLE_CALLBACK_HERE"
   },
-  "LOGGING": false
+  //just making it do nothing for now so i don't get that dumb warning
+  "LOGGING": function(msg){return}
 };

@@ -1,0 +1,53 @@
+<section id='job' class='container-fluid'>
+  <div class='row'>
+    <div class='col-lg-offset-11'>
+      <button class='btn btn-default' ui-sref='addJob'>Add Job</button>
+    </div>
+  </div>
+  <accordion>
+    <div class='accordion-group'>
+      <div class='accordion-heading'>
+        <div class='accordion-toggle'>
+          <div class='col-lg-1'>ID</div>
+          <div class='col-lg-2'>NAME</div>
+          <div class='col-lg-1'>STATUS</div>
+          <div class='col-lg-2'>STARTED</div>
+          <div class='col-lg-2'>FINISHED</div>
+          <div class='col-lg-2'>CREATED</div>
+          <div class='col-lg-2'>UPDATED</div>
+        </div>
+      </div>
+    </div>
+    <accordion-group ng-repeat='job in allJobs'>
+      <accordion-heading>
+        <div class='row'>
+          <div class='col-lg-1'> {{ job.id }}</div>
+          <div class='col-lg-2'> {{ job.name }}</div>
+          <div class='col-lg-1'> {{ job.status }}</div>
+          <div class='col-lg-2'> {{ job.started }}</div>
+          <div class='col-lg-2'> {{ job.finished }}</div>
+          <div class='col-lg-2'> {{ job.createdAt }}</div>
+          <div class='col-lg-2'> {{ job.updatedAt }}</div>
+        </div>
+      </accordion-heading>
+      <div>
+          <div class='row'>
+            <div class='col-lg-1'>DETAIL ID</div>
+            <div class='col-lg-2'>URL TO SEARCH</div>
+            <div class='col-lg-2'>VENDOR TO FIND</div>
+            <div class='col-lg-1'>FOUND?</div>
+            <div class='col-lg-1'>PREVIEW</div>
+          </div>
+        <div ng-repeat='detail in job.jobDetails'>
+          <div class='row'>
+            <div class='col-lg-1'>{{ detail.id }}</div>
+            <div class='col-lg-2'>{{ detail.toSearch }}</div>
+            <div class='col-lg-2'>{{ detail.toFind }}</div>
+            <div class='col-lg-1'>{{ detail.found }}</div>
+            <div class='col-lg-1'><a target='_blank' href='{{detail.pathToFile}}'>View</a></div>
+          </div>
+        </div>
+      </div>
+    </accordion-group>
+  </accordion>
+</section>

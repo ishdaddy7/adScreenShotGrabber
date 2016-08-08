@@ -15,6 +15,9 @@ module.exports = db.define('jobDetail', {
         type: Sequelize.BOOLEAN,
         defaultValue: false
     },
+    lastSearched: {
+        type: Sequelize.DATE
+    },
     pathToFile: {
         type: Sequelize.STRING
     }
